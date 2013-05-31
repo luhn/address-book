@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<form method="post" action="{{ request.path }}">
+  <dl>
+    <dt>First name:</dt>
+    <dd><input type="text" name="forename" value="{{ person.forename }}" /></dd>
+    <dt>Last name:</dt>
+    <dd><input type="text" name="surname" value="{{ person.surname }}" /></dd>
+    <dt>Phone:</dt>
+    <dd><input type="text" name="phone" value="{{ person.phone }}" /></dd>
+    <dt>Email:</dt>
+    <dd><input type="text" name="email" value="{{ person.email }}" /></dd>
+    <dd><input type="submit" value="Save" /></dd>
+  </dl>
+</form>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<form method="post" action="{{ url_for('new') }}">
+  <dl>
+    <dt>First name:</dt>
+    <dd><input type="text" name="forename" /></dd>
+    <dt>Last name:</dt>
+    <dd><input type="text" name="surname" /></dd>
+    <dt>Phone:</dt>
+    <dd><input type="text" name="phone" /></dd>
+    <dt>Email:</dt>
+    <dd><input type="text" name="email" /></dd>
+    <dd><input type="submit" value="Save" /></dd>
+  </dl>
+</form>
+{% for person in people %}
+<p>{{person.forename}} {{person.surname}} —
+<a href="{{ url_for('edit', id=person.id) }}">Edit</a>
+<a href="{{ url_for('delete', id=person.id) }}">Delete</a></p>
+<p>{{person.phone}}</p>
+<p>{{person.email}}</p>
+{% endfor %}
+{% endblock %}
+
